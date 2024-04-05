@@ -74,7 +74,7 @@ jobs:
         PACKAGE_SOC: panther-x2
         WHOAMI: Demons
         KERNEL_REPO_URL: https://github.com/breakings/OpenWrt/tree/main/opt
-        KERNEL_VERSION_NAME: 6.1.1
+        KERNEL_VERSION_NAME: 6.1.1_6.6.1
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         OPENWRT_VER: R24.2.2
         KERNEL_AUTO_LATEST: true
