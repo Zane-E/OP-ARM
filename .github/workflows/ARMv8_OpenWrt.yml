@@ -75,7 +75,7 @@ jobs:
         WHOAMI: Demons
         #KERNEL_REPO_URL: https://github.com/breakings/OpenWrt/tree/main/opt
         KERNEL_VERSION_NAME: 6.1.84_6.6.24
-        OPENWRT_VER: R24.2.2
+        OPENWRT_VER: R24.4.4
         KERNEL_AUTO_LATEST: true
         GZIP_IMGS: .gz
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
