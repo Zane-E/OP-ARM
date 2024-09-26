@@ -4,7 +4,7 @@
 # Cron: min (0 - 59) / hour (0 - 23) / day of month (1 - 31) / month (1 - 12) / day of week (0 - 6)(Sunday - Saturday)
 #========================================================================================================================
 
-name: Tvi3315a-Flippy
+name: Tvi3315a-Breakings
 
 on:
   repository_dispatch:
@@ -14,8 +14,8 @@ on:
         description: 'SSH connection'
         required: false
         default: 'false'
-  # schedule:
-    # - cron: '45 21 * * *'
+  schedule:
+    - cron: '15 23 * * *'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -28,7 +28,7 @@ env:
   UPLOAD_RELEASE: true
   RECENT_LASTEST: 30
   TZ: Asia/Shanghai
-  FILE_NAME: Tvi3315a-Flippy
+  FILE_NAME: Tvi3315a-Breakings
   PRODUCT_NAME: ARMv8
 
 jobs:
@@ -70,7 +70,7 @@ jobs:
       if: (!cancelled())
       uses: Zane-E/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/Zane-E/ROOTFS/releases/download/ROOTFS.bak/openwrt-armvirt-64-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/breakings/OpenWrt/releases/download/openwrt_armvirt/openwrt-armvirt-64-generic-rootfs.tar.gz
         PACKAGE_SOC: tvi3315a
         WHOAMI: Demons
         # KERNEL_REPO_URL: https://github.com/ophub/kernel/releases/tag/kernel_stable
@@ -100,7 +100,7 @@ jobs:
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
           - 默认IP：192.168.1.1 默认密码：password (WiFi密码同）
-          - 底包来源：Flippy 底包
+          - 底包来源：Breakings 地址：https://github.com/breakings（高大全）
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
