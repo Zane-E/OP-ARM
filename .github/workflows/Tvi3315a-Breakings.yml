@@ -33,7 +33,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -68,13 +68,13 @@ jobs:
       if: (!cancelled())
       uses: Zane-E/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/breakings/OpenWrt/releases/download/openwrt_armvirt/openwrt-armvirt-64-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/breakingbadboy/OpenWrt/releases/download/openwrt_armvirt/openwrt-armvirt-64-generic-rootfs.tar.gz
         PACKAGE_SOC: tvi3315a
         WHOAMI: Demons
         KERNEL_REPO_URL: https://github.com/ophub/kernel/releases/tag/kernel_stable
         KERNEL_VERSION_NAME: 6.1.1_6.6.1
         token: ${{ secrets.GITHUB_TOKEN }}
-        OPENWRT_VER: R24.11.11
+        OPENWRT_VER: R24.12.12
         KERNEL_AUTO_LATEST: true
         GZIP_IMGS: .gz
 
@@ -100,7 +100,7 @@ jobs:
           - 默认 IP：192.168.1.1  默认密码：password ( WiFi 密码相同 ）
           - 默认 DTB 文件为自用超频版，原 DTB 文件备份在目录中，可自行恢复
           - 底包来源：Breakings ( 高大全 ）
-          - 地址：https://github.com/breakings/OpenWrt
+          - 地址：https://github.com/breakingbadboy/OpenWrt
 
     - name: Delete releases and workflows runs
       uses: ophub/delete-releases-workflows@main
