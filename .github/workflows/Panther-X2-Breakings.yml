@@ -74,7 +74,7 @@ jobs:
         # KERNEL_REPO_URL: https://github.com/ophub/kernel/releases/tag/kernel_stable
         KERNEL_VERSION_NAME: 6.1.1_6.6.1
         token: ${{ secrets.GITHUB_TOKEN }}
-        OPENWRT_VER: R24.12.12
+        OPENWRT_VER: R25.1.1
         KERNEL_AUTO_LATEST: true
         GZIP_IMGS: .gz
 
@@ -83,7 +83,7 @@ jobs:
       if: env.PACKAGED_STATUS == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       with:
         path: ${{ env.PACKAGED_OUTPUTPATH }}/
-        
+
     - name: Upload OpenWrt Firmware to Release
       id: release
       uses: ncipollo/release-action@main
