@@ -74,7 +74,7 @@ jobs:
         KERNEL_REPO_URL: https://github.com/ophub/kernel/releases/tag/kernel_stable
         KERNEL_VERSION_NAME: 6.1.1_6.6.1_6.12.1
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OPENWRT_VER: R25.8.8
+        OPENWRT_VER: R25.10.10
         KERNEL_AUTO_LATEST: true
         GZIP_IMGS: .gz
 
